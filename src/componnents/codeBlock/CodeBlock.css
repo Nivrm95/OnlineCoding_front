@@ -3,7 +3,7 @@
   width: 750px;
   height: 450px;
   left: 50%;
-  top: 62%;
+  top: 60%;
   transform: translate(-50%, -50%);
   padding: 40px 0px 40px;
   display: flex;
@@ -32,7 +32,6 @@ pre::-webkit-scrollbar {
   display: none;
 }
 .code-block-header {
-
   width: 750px;
   display: flex;
   justify-content: space-around;

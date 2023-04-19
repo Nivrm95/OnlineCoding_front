@@ -1,54 +1,3 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import { Cube, CubeDescription, MainCubePart } from "../../styledComponents/StyledRoom";
-
-// export interface IRoomsState {
-//   value: IRoomsProps[];
-// }
-
-// export interface IRoomsProps {
-//   _id: string;
-//   name: number;
-//   icon: string;
-//   description: string;
-// }
-// const RoomList: React.FC = ()=> {
-//     const navigat = useNavigate();
-  
-//   return (
-//     <>
-//       <Cube onClick={() => navigat("/CodePage")}>
-//         <MainCubePart>
-//           <img src="./icons/Code.svg" alt="room icon" />
-//         </MainCubePart>
-//         <CubeDescription>Arrays</CubeDescription>
-//       </Cube>
-//       <Cube onClick={() => navigat("/CodePage")}>
-//         <MainCubePart>
-//           <img src="./icons/Code.svg" alt="room icon" />
-//         </MainCubePart>
-//         <CubeDescription>Objects</CubeDescription>
-//       </Cube>
-//       <Cube onClick={() => navigat("/CodePage")}>
-//         <MainCubePart>
-//           <img src="./icons/Code.svg" alt="room icon" />
-//         </MainCubePart>
-//         <CubeDescription>Components</CubeDescription>
-//       </Cube>
-//       <Cube onClick={() => navigat("/CodePage")}>
-//         <MainCubePart>
-//           <img src="./icons/Code.svg" alt="room icon" />
-//         </MainCubePart>
-//         <CubeDescription>Functions</CubeDescription>
-//       </Cube>
-//     </>
-//   );
-// };
-
-// export default RoomList;
-
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -106,30 +55,6 @@ const RoomList: React.FC = () => {
 };
 
 export default RoomList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //////////////////////////////////////////////////////////////////////////axios//////////////////////////////////////////////

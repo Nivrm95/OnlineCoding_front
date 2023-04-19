@@ -6,7 +6,7 @@ import { Editor } from "@monaco-editor/react";
 const CodeBlock: React.FC = () => {
   const editorRef = useRef<any>();
   const codeRef = useRef<HTMLElement>(null);
-  
+
   function handleEditorDidMount(editor: any, monaco: any) {
     editorRef.current = editor;
   }
@@ -47,18 +47,16 @@ const CodeBlock: React.FC = () => {
     <div className="code-block-container">
       <div className="code-block-header">
         <span> Let's start ;) </span>
-        <button onClick={handleDownloadClick}>
-          {downloadButtonText}
-        </button>
+        <button onClick={handleDownloadClick}>{downloadButtonText}</button>
         <button onClick={handleCopyClick}>{copyButtonText}</button>
       </div>
-      <Editor
-        height="100%"
-        width="750px"
-        defaultLanguage="javascript"
-        onMount={handleEditorDidMount}
-        theme="vs-dark"
-      />
+        <Editor
+          height="100%"
+          width="750px"
+          defaultLanguage="javascript"
+          onMount={handleEditorDidMount}
+          theme="vs-dark"
+        />
     </div>
   );
 };

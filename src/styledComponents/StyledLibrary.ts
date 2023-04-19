@@ -20,6 +20,7 @@ export const LibraryContainer = styled.div`
   box-shadow: 0px 4.74576px 30.8475px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media (max-width: 391px) {
     height: 500px;
