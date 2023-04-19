@@ -1,38 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./CodeBlock.css";
-import hljs from "highlight.js/lib/core";
-import javascript from "highlight.js/lib/languages/javascript";
-import "highlight.js/styles/vs2015.css";
+import "@monaco-editor/react";
+import { Editor } from "@monaco-editor/react";
 
-hljs.registerLanguage("javascript", javascript);
+
 
 const CodeBlock: React.FC = () => {
-  const [code, setCode] = useState("");
-  const codeRef = useRef<HTMLPreElement>(null);
-
-
-  useEffect(() => {
-    if (codeRef.current) {
-      hljs.highlightBlock(codeRef.current);
-    }
-  }, [code]);
-
-  function handleKeyDown(event: React.KeyboardEvent<HTMLElement>) {
-    if (event.key === "Enter" && event.shiftKey) {
-      setCode((prevCode) => prevCode + "\n");
-      event.preventDefault();
-    }
+  const editorRef = useRef<null | any>(null);
+  function handleEditorDidMount(editor: any, monaco: any): void {
+    editorRef.current = editor;
   }
 
   return (
     <div className="code-block-container">
       <div className="code-block-header"></div>
-      <pre
-        ref={codeRef}
-        className="javascript"
-        contentEditable={true}
-        onKeyDown={handleKeyDown}
-        dangerouslySetInnerHTML={{ __html: code }}
+      <Editor
+        height="100%"
+        width="750px"
+        defaultLanguage="javascript"
+        onMount={handleEditorDidMount}
+        theme="vs-dark"
       />
     </div>
   );

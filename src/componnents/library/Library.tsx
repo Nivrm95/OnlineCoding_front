@@ -17,7 +17,7 @@ export const Library: React.FC = () => {
           <HeaderTitleSpan>Choose the room</HeaderTitleSpan>
         </HeaderContainer>
         <RoomSection>
-        <RoomList />
+        <RoomList/>
         </RoomSection>
       </LibraryContainer>
     </LibrarySection>

@@ -1,42 +1,27 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-interface Room {
+export interface IRooms {
   _id: string;
   name: string;
   icon: string;
   description: string;
 }
-
-interface RoomsState {
-  loading: boolean;
-  error: string | null;
-  data: Room[];
+export interface IRoomsState {
+  allRooms: IRooms[];
 }
 
-const initialState: RoomsState = {
-  loading: false,
-  error: null,
-  data: [],
-};
-
-const roomsSlice = createSlice({
+export const roomsSlice = createSlice({
   name: "rooms",
-  initialState,
+  initialState: {
+    allRooms: [],
+  } as IRoomsState,
   reducers: {
-    getRoomsStart(state) {
-      state.loading = true;
-      state.error = null;
-    },
-    getRoomsSuccess(state, action: PayloadAction<Room[]>) {
-      state.loading = false;
-      state.data = action.payload;
-    },
-    getRoomsFailure(state, action: PayloadAction<string>) {
-      state.loading = false;
-      state.error = action.payload;
+    getRoomsData: (state, action) => {
+      state.allRooms = action.payload;
     },
   },
 });
 
-export const { getRoomsStart, getRoomsSuccess, getRoomsFailure } = roomsSlice.actions;
+export const { getRoomsData } = roomsSlice.actions;
 export default roomsSlice.reducer;

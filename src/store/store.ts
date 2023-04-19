@@ -1,5 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import roomsReducer from "./slices/roomSlice";
+import roomsReducer, { IRoomsState } from "./slices/roomSlice";
+
+export interface RootState {
+  value: IRoomsState;
+}
+
 
 const roomsStore = configureStore({
   reducer: {
