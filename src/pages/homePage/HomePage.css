@@ -1,7 +1,20 @@
 .pageFrame {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100vw;
+  position: relative;
+}
+header{
+  flex-direction: column;
+
+  height: 10vh;
+  display: flex;
+  padding: 10px 8px;
+  gap: 5px;
+  width: 100vw;
+  background: rgb(59, 57, 116);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 4px 26px;
+  border-radius: 0px;
 }
 
 @media (max-width: 391px) {

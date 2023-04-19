@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./HomePage.css";
-import { useNavigate } from "react-router-dom";
 import Library from "../../componnents/library/Library";
 
-const HomePage: React.FC = () => { 
+
+const HomePage: React.FC = () => {
   return (
     <div className="pageFrame">
-      
+      <header>
+      </header>
       <Library />
     </div>
   );
