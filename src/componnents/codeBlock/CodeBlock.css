@@ -45,3 +45,9 @@ pre::-webkit-scrollbar {
 }
 
 
+.code-block-header > button {
+  all: unset;
+  padding: 2px;
+  cursor: pointer;
+  color: aliceblue;
+}
