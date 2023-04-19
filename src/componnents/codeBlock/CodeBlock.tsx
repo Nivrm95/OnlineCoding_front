@@ -3,11 +3,10 @@ import "./CodeBlock.css";
 import "@monaco-editor/react";
 import { Editor } from "@monaco-editor/react";
 
-
-
 const CodeBlock: React.FC = () => {
-  const editorRef = useRef<null | any>(null);
-  function handleEditorDidMount(editor: any, monaco: any): void {
+  const editorRef = useRef<any>();
+
+  function handleEditorDidMount(editor: any, monaco: any) {
     editorRef.current = editor;
   }
 
