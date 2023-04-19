@@ -6,6 +6,7 @@ import {
   LibrarySection,
 } from "../../styledComponents/StyledLibrary";
 import Header from "../../componnents/header/Header";
+import CodeBlock from "../../componnents/codeBlock/CodeBlock";
 
 const CodePage: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const CodePage: React.FC = () => {
           <HeaderContainer>
             <HeaderTitleSpan>Start working</HeaderTitleSpan>
           </HeaderContainer>
+            <CodeBlock />
         </LibraryContainer>
       </LibrarySection>
     </div>
