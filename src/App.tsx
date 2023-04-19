@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Frame from "./componnents/frame/Frame";
 import HomePage from "./pages/homePage/HomePage";
+import CodePage from "./pages/codePage/CodePage";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Frame />}>
             <Route index element={<HomePage />} />
+            <Route path="/CodePage" element={<CodePage />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -19,5 +21,5 @@ function App() {
   );
 }
 
-// document.body.className = "gradient-bg";
+
 export default App;

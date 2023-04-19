@@ -1,0 +1,22 @@
+[
+    {
+      "name": "room 1",
+      "icon": "./icons/Code.svg",
+      "description": "Arrays"      
+    },
+    {
+	"name": "room 2",
+      "icon": "./icons/Code.svg",
+      "description": "Objects"      
+    },  
+    {
+      "name": "room 3",
+      "icon": "./icons/Code.svg",
+      "description": "Components"     
+    },  
+    {
+      "name": "room 4",
+      "icon": "./icons/Code.svg",
+      "description": "Functions"      
+    }   
+ ]

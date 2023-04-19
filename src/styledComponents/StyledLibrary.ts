@@ -32,7 +32,7 @@ export const HeaderContainer = styled.div`
   border-top-left-radius: 21.3559px;
   border-top-right-radius: 21.3559px;
   width: 100%;
-  height: 25%;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;

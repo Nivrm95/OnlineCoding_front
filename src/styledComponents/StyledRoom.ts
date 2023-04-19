@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const RoomSection = styled.div`
     display: grid;
   width: 100%;
-  height: 90%;
+  height: 80%;
   padding: 10px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
