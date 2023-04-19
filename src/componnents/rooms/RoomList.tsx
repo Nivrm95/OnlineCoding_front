@@ -1,6 +1,61 @@
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
+// import { Cube, CubeDescription, MainCubePart } from "../../styledComponents/StyledRoom";
+
+// export interface IRoomsState {
+//   value: IRoomsProps[];
+// }
+
+// export interface IRoomsProps {
+//   _id: string;
+//   name: number;
+//   icon: string;
+//   description: string;
+// }
+// const RoomList: React.FC = ()=> {
+//     const navigat = useNavigate();
+  
+//   return (
+//     <>
+//       <Cube onClick={() => navigat("/CodePage")}>
+//         <MainCubePart>
+//           <img src="./icons/Code.svg" alt="room icon" />
+//         </MainCubePart>
+//         <CubeDescription>Arrays</CubeDescription>
+//       </Cube>
+//       <Cube onClick={() => navigat("/CodePage")}>
+//         <MainCubePart>
+//           <img src="./icons/Code.svg" alt="room icon" />
+//         </MainCubePart>
+//         <CubeDescription>Objects</CubeDescription>
+//       </Cube>
+//       <Cube onClick={() => navigat("/CodePage")}>
+//         <MainCubePart>
+//           <img src="./icons/Code.svg" alt="room icon" />
+//         </MainCubePart>
+//         <CubeDescription>Components</CubeDescription>
+//       </Cube>
+//       <Cube onClick={() => navigat("/CodePage")}>
+//         <MainCubePart>
+//           <img src="./icons/Code.svg" alt="room icon" />
+//         </MainCubePart>
+//         <CubeDescription>Functions</CubeDescription>
+//       </Cube>
+//     </>
+//   );
+// };
+
+// export default RoomList;
+
+
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Cube, CubeDescription, MainCubePart } from "../../styledComponents/StyledRoom";
+import {
+  Cube,
+  CubeDescription,
+  MainCubePart,
+} from "../../styledComponents/StyledRoom";
 
 export interface IRoomsState {
   value: IRoomsProps[];
@@ -12,30 +67,35 @@ export interface IRoomsProps {
   icon: string;
   description: string;
 }
-const RoomList: React.FC = ()=> {
-    const navigat = useNavigate();
-  
+
+const RoomList: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleCubeClick = (description: string) => {
+    navigate("/CodePage", { state: { description } });
+  };
+
   return (
     <>
-      <Cube onClick={() => navigat("/CodePage")}>
+      <Cube onClick={() => handleCubeClick("Arrays")}>
         <MainCubePart>
           <img src="./icons/Code.svg" alt="room icon" />
         </MainCubePart>
         <CubeDescription>Arrays</CubeDescription>
       </Cube>
-      <Cube onClick={() => navigat("/CodePage")}>
+      <Cube onClick={() => handleCubeClick("Objects")}>
         <MainCubePart>
           <img src="./icons/Code.svg" alt="room icon" />
         </MainCubePart>
         <CubeDescription>Objects</CubeDescription>
       </Cube>
-      <Cube onClick={() => navigat("/CodePage")}>
+      <Cube onClick={() => handleCubeClick("Components")}>
         <MainCubePart>
           <img src="./icons/Code.svg" alt="room icon" />
         </MainCubePart>
         <CubeDescription>Components</CubeDescription>
       </Cube>
-      <Cube onClick={() => navigat("/CodePage")}>
+      <Cube onClick={() => handleCubeClick("Functions")}>
         <MainCubePart>
           <img src="./icons/Code.svg" alt="room icon" />
         </MainCubePart>
@@ -46,6 +106,26 @@ const RoomList: React.FC = ()=> {
 };
 
 export default RoomList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
