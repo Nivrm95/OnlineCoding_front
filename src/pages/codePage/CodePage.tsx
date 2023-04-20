@@ -7,13 +7,16 @@ import {
 } from "../../styledComponents/StyledLibrary";
 import Header from "../../componnents/header/Header";
 import CodeBlock from "../../componnents/codeBlock/CodeBlock";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 const CodePage: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const description = location.state?.description ?? "";
-
+  const currentRoom = useSelector((state: RootState) => state.rooms.currentRoom);
+  
+  console.log(currentRoom);
+  
   return (
     <div className="pageFrame">
       <Header />
@@ -34,7 +37,7 @@ const CodePage: React.FC = () => {
               >
                 <img src="./icons/Close.svg" alt="go back" />
               </button>
-            <HeaderTitleSpan>{description} Room</HeaderTitleSpan>
+            <HeaderTitleSpan>{currentRoom?.description} Room</HeaderTitleSpan>
           </HeaderContainer>
           <CodeBlock />
         </LibraryContainer>
