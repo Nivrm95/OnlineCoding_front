@@ -39,7 +39,7 @@ const CodePage: React.FC = () => {
               </button>
             <HeaderTitleSpan>{currentRoom?.description} Room</HeaderTitleSpan>
           </HeaderContainer>
-          <CodeBlock />
+          <CodeBlock roomId={currentRoom ? currentRoom._id : ""} />
         </LibraryContainer>
       </LibrarySection>
     </div>
