@@ -17,6 +17,7 @@ const CodePage: React.FC = () => {
   
   console.log(currentRoom);
   
+  
   return (
     <div className="pageFrame">
       <Header />

@@ -6,6 +6,7 @@ export interface IRoom {
   icon: string;
   description: string;
 }
+
 export interface IRoomsState {
   allRooms: IRoom[];
   currentRoom: IRoom | null;
