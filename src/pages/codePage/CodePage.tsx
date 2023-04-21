@@ -15,7 +15,7 @@ const CodePage: React.FC = () => {
   const navigate = useNavigate();
   const currentRoom = useSelector((state: RootState) => state.rooms.currentRoom);
   
-  console.log(currentRoom);
+
   
   
   return (
