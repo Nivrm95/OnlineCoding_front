@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Cube, CubeDescription, MainCubePart } from "../../styledComponents/StyledRoom";
+import {
+  Cube,
+  CubeDescription,
+  MainCubePart,
+} from "../../styledComponents/StyledRoom";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -14,11 +18,12 @@ const RoomList: React.FC = () => {
   const rooms = useSelector((state: RootState) => state.rooms.allRooms);
   const [isLoading, setIsLoading] = useState(false);
 
-
   const fetchRoomsData = async () => {
     setIsLoading(true);
     try {
-      const roomsData = await axios.get("http://localhost:8000/rooms");
+      const roomsData = await axios.get(
+        "https://nivproject.onrender.com/rooms"
+      );
       dispatch(getRoomsData(roomsData.data));
     } catch (error: any) {
       console.log(error);
@@ -39,14 +44,15 @@ const RoomList: React.FC = () => {
   return (
     <>
       {isLoading && <div>Loading...</div>}
-      {!isLoading && rooms.map((room:IRoom) => (
-        <Cube key={room._id} onClick={() => handleSelectRoom(room)}>
-          <MainCubePart>
-            <img src={room.icon} alt="room icon" />
-          </MainCubePart>
-          <CubeDescription>{room.description}</CubeDescription>
-        </Cube>
-      ))}
+      {!isLoading &&
+        rooms.map((room: IRoom) => (
+          <Cube key={room._id} onClick={() => handleSelectRoom(room)}>
+            <MainCubePart>
+              <img src={room.icon} alt="room icon" />
+            </MainCubePart>
+            <CubeDescription>{room.description}</CubeDescription>
+          </Cube>
+        ))}
     </>
   );
 };

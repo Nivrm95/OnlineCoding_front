@@ -141,7 +141,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ roomId }) => {
   console.log(roomId);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:8000", {
+    const newSocket = io("https://nivproject.onrender.com", {
       query: { roomId },
     });
     setSocket(newSocket);
@@ -162,14 +162,13 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ roomId }) => {
 
       socket.on("roomSize", (event: any) => {
         console.log("eventRoomSize", event.roomSize);
-        if (event.roomSize > 1 ) {
+        if (event.roomSize > 1) {
           console.log("im first!");
           setCanEdit(true);
         }
       });
     }
   }, [socket]);
-
 
   const handleEditorDidMount = (editor: any, monaco: any) => {
     editorRef.current = editor;
